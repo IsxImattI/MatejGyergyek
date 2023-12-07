@@ -120,22 +120,58 @@ body, html {
   <h3 class="w3-center" style="color: black; font-size: 2em;">LATEST NEWS</h3>
   <p class="w3-center w3-large" style="color: black;">Stay updated with the latest happenings.</p>
   <!-- Add your news articles or updates here -->
-  <div class="w3-row-padding">
-      <div class="w3-col l4 m6 w3-margin-bottom">
-          <div class="w3-card">
-              <img src="" alt="" style="width:100%">
-              <div class="w3-container">
-                <h3 style="color: black; font-size: 1.5em;">Website Update!</h3>
-                <p class="w3-opacity" style="color: black; ">Published on 6. 12. 2023</p>
-                <p style="color: black; font-size: 1em;">I'm thrilled to announce exciting changes to my website!<br> Today, I launched a new News section to keep you updated with the latest happenings, announcements, and insights.<br>
-
-                  Explore the latest updates, project highlights, and news right here.<br> I believe this addition will enhance your experience and keep you engaged with my journey.</p>
-              </div>
-          </div>
+  <div class="w3-row-padding news-container">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="" alt="" style="width:100%">
+        <div class="w3-container">
+          <h3 style="color: black; font-size: 1.5em;">A New Template Is In The Works!</h3>
+          <p class="w3-opacity" style="color: black; ">Published on 7. 12. 2023</p>
+          <p style="color: black; font-size: 1em;">I'm excited to let you know that I'm currently working on a dynamic gym website template! Stay tuned for updates on this project.</p>
+        </div>
       </div>
-      <!-- Add more news articles as needed -->
+    </div>
+    <!-- Add more news articles as needed -->
+
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="" alt="" style="width:100%">
+        <div class="w3-container">
+          <h3 style="color: black; font-size: 1.5em;">Website Update!</h3>
+          <p class="w3-opacity" style="color: black; ">Published on 6. 12. 2023</p>
+          <p style="color: black; font-size: 1em;">I'm thrilled to announce exciting changes to my website!<br> Today, I launched a new News section to keep you updated with the latest happenings, announcements, and insights.<br>
+
+            Explore the latest updates, project highlights, and news right here.<br> I believe this addition will enhance your experience and keep you engaged with my journey.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add more news articles as needed -->
   </div>
 </div>
+
+<style>
+  /* Add this CSS to align news articles horizontally */
+  .news-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    flex-wrap: wrap; /* Wrap to the next line if the screen is not wide enough */
+  }
+
+  .news-container .w3-col {
+    width: calc(33.33% - 20px); /* Adjust width and margin as needed */
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .news-container .w3-col {
+      width: 100%; /* One column on smaller screens */
+    }
+  }
+
+  /* Add your existing CSS styles here */
+</style>
+
 
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
@@ -208,9 +244,9 @@ body, html {
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="" alt="" style="width:100%">
+        <img src="gym.png" alt="" style="width:100%">
         <div class="w3-container">
-          <h3>Project 4</h3>
+          <h3>Gym Website Template</h3>
           <p class="w3-opacity"></p>
           <p>In Progress.</p>
         </div>
