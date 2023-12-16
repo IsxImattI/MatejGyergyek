@@ -1,520 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Matej Gyergyek</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="icon" href="favicon-32x32.png" type="" sizes="32x32">
-<link rel="icon" href="favicon-16x16.png" type="" sizes="16x16">
-<link rel="icon" href="android-chrome-192x192.png" type="" sizes="192x192">
-<link rel="icon" href="android-chrome-512x512.png" type="" sizes="512x512">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
-body, html {
-  height: 100%;
-  line-height: 1.8;
-  background: linear-gradient(to right, #00b4db, #0083b0);
-}
-
-/* Full height image header */
-.bgimg-1 {
-  background-image: url();
-  background-position: right; /* Align the image to the top right */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-size: auto 30%; /* Set the width to auto and height to 30% */
-  min-height: 100vh; /* Adjusted to ensure the background covers the full height of the viewport */
-  margin-right: 300px;
-}
-
-.w3-bar .w3-button {
-  padding: 16px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Matej</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="favicon-32x32.png" type="" sizes="32x32">
+    <link rel="icon" href="favicon-16x16.png" type="" sizes="16x16">
+    <link rel="icon" href="android-chrome-192x192.png" type="" sizes="192x192">
+    <link rel="icon" href="android-chrome-512x512.png" type="" sizes="512x512">
 </head>
 <body>
+    <header class="header">
+        <a href="#home" class="logo">Matej.</a>
+        <i class='bx bx-menu' id="menu"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about" >About</a>
+            <a href="#projects" >Projects</a>
+            <a href="#news" >News</a>
+            <a href="#contact" >Contact</a>
+        </nav>
+    </header>
 
-  <!-- Countdown Timer Popup -->
-
-  
-<div id="countdownPopup" class="popup">
-  <div class="countdown-content">
-    <div class="countdownText">
-      <h2>New look soon!</h2>
-    </div>
-      <span id="countdownTimer"></span>
-      <button onclick="closePopup()">Close</button>
-  </div>
-</div>
-<style>
-/* Popup Styles */
-.popup {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background for better contrast */
-    z-index: 1000;
-    overflow: hidden; /* Prevents scrolling of background content */
-    animation: fadeIn 0.3s; /* Smooth fade-in effect */
-}
-
-.countdown-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #ffffff;
-    padding: 30px; /* Increased padding for a more spacious look */
-    border-radius: 15px; /* Larger radius for softer corners */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 500px; /* Max width for better readability on large screens */
-    width: 90%; /* Responsive width */
-    font-family: 'Arial', sans-serif; /* Modern font */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-</style>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">MATEJ.</a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="#news" class="w3-bar-item w3-button"><i class="fa fa-newspaper-o"></i> NEWS</a>
-      <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ABOUT</a>
-      <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-desktop"></i> PROJECTS</a>
-      <a href="#skills" class="w3-bar-item w3-button"><i class="fa fa-th"></i> SKILLS</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#news" onclick="w3_close()" class="w3-bar-item w3-button">NEWS</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
-  <a href="#skills" onclick="w3_close()" class="w3-bar-item w3-button">SKILLS</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-</nav>
-
-<!-- Header with full-height image -->
-
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding: 48px">
-    <span class="w3-jumbo w3-hide-small">Strategic Web and App Development</span><br>
-    <span class="w3-large">Semantic Code Matters</span>
-    <p class="button-container">
-      <a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off">Learn more</a>
-      <!-- hidden for now
-      <a href="path/to/your/cv.pdf" download="MatejGyergyek_CV.pdf" class="w3-button w3-black w3-padding-large w3-large w3-opacity w3-hover-opacity-off">
-        <i class="fa fa-download"></i> DOWNLOAD CV
-      </a>
-    -->
-    </p>
-  </div> 
-  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding: 24px 48px">
-  </div>
-</header>
-
-<style>
-.button-container {
-  display: flex;
-  align-items: center; /* Align items vertically in the center */
-}
-
-.button-container a {
-  margin-right: 10px; /* Adjust the spacing between buttons as needed */
-}
-
-/* Responsive styling */
-@media screen and (max-width: 600px) {
-  .w3-display-left {
-    padding: 24px; /* Adjust padding for smaller screens */
-  }
-
-  .button-container {
-    flex-direction: column; /* Stack buttons vertically on smaller screens */
-    align-items: flex-start; /* Align items to the start of the container */
-  }
-
-  .button-container a {
-    margin-right: 0; /* Remove margin for stacked buttons */
-    margin-bottom: 10px; /* Add margin between stacked buttons */
-  }
-}
-</style>
-
-<!-- News Section -->
-
-<div class="w3-container" style="padding: 128px 16px" id="news">
-  <h3 class="w3-center" style="color: black; font-size: 2em;">LATEST NEWS</h3>
-  <p class="w3-center w3-large" style="color: black;">Stay updated with the latest happenings.</p>
-  <!-- Add your news articles or updates here -->
-  <div class="w3-row-padding news-container">
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="" alt="" style="width:100%">
-        <div class="w3-container">
-          <h3 style="color: black; font-size: 1.5em;">New App Landing Page Template</h3>
-          <p class="w3-opacity" style="color: black; ">Published on 10. 12. 2023</p>
-          <p style="color: black; font-size: 1em;">I'm excited to introduce my new app landing page template website. What's remarkable is that I didn't think I could finish it in just one day, but I did!</p>
+    <section class="home" id="home">
+        <div class="home-detail">
+            <h3></h3>
+            <h1>I'm Matej Gyergyek</h1>
+            <h3><span class="textline"></span></h3>
+            <p>Innovating One Pixel at a Time</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/matejgyergyek/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/matej-gyergyek-283087165/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <!-- <button class="btn">Download CV</button> -->
         </div>
-      </div>
-    </div>
-    <!-- Add more news articles as needed -->
-
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="" alt="" style="width:100%">
-        <div class="w3-container">
-          <h3 style="color: black; font-size: 1.5em;">Update to Weather Web App Project</h3>
-          <p class="w3-opacity" style="color: black; ">Published on 9. 12. 2023</p>
-          <p style="color: black; font-size: 1em;">I'm excited to announce an update to the Weather Web App project!<br> This latest version now features beautifully designed icons, enhancing both the aesthetic appeal and the user experience of the app.</p>
+        <div class="home-img">
+            <img src="logo (1).png" alt="">
         </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="" alt="" style="width:100%">
-        <div class="w3-container">
-          <h3 style="color: black; font-size: 1.5em;">Launch of Dynamic Gym Website Template!</h3>
-          <p class="w3-opacity" style="color: black; ">Published on 9. 12. 2023</p>
-          <p style="color: black; font-size: 1em;">Exciting news for fitness enthusiasts and gym owners! I'm proud to unveil my latest gym website template.</p>
+
+    
+
+
+
+    <section class="about" id="about">
+        <div class="about-section">
+            <h2 class="allheading">About <span>Me</span></h2>
+            <h3 class="subtitle"></h3>
+            <div class="about-content">
+                <p>Web developer with a passion for creating responsive, engaging online experiences. Here's what drives my work:</p>
+                <ul class="features-list">
+                    <li><strong>Responsive Design:</strong> Websites that adapt flawlessly to any device.</li>
+                    <li><strong>Passion for Innovation:</strong> A journey of continuous learning and creativity.</li>
+                    <li><strong>Creative Design:</strong> Combining functionality with aesthetic appeal.</li>
+                    <li><strong>Client Support:</strong> Providing solutions and assistance for a smooth experience.</li>
+                </ul>
+            </div>
+            <!-- <a href="#" class="btn">Read More</a> --> 
         </div>
-      </div>
-    </div>
-    <!-- Add more news articles as needed -->
-  </div>
-</div>
+    </section>
+    
+    
 
-<style>
-  /* Add this CSS to align news articles horizontally */
-  .news-container {
-    display: flex;
-    justify-content: space-between; /* Adjust as needed */
-    flex-wrap: wrap; /* Wrap to the next line if the screen is not wide enough */
-  }
-
-  .news-container .w3-col {
-    width: calc(33.33% - 20px); /* Adjust width and margin as needed */
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .news-container .w3-col {
-      width: 100%; /* One column on smaller screens */
-    }
-  }
-
-  /* Add your existing CSS styles here */
-</style>
-
-
-<!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center w3-large">Key features</p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Responsive</p>
-      <p>Responsive HTML is crucial for web development as it enables websites to adapt seamlessly to various devices and screen sizes. This adaptability ensures a consistent and user-friendly experience, improves SEO rankings, reduces maintenance efforts, and enhances overall performance. Responsive design is essential for reaching a broad audience, increasing user satisfaction, and staying competitive in the dynamic online landscape.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Passion</p>
-      <p>Web development is my passion—more than just coding, it's about crafting engaging online experiences. I love the constant learning, problem-solving, and the thrill of creating something impactful for users. It's not just a job; it's a journey of innovation and making a positive mark in the digital realm.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Design</p>
-      <p>Design, for me, is like orchestrating a symphony of creativity and purpose. It's not just about making things look good; it's about weaving a narrative, solving problems, and enhancing how people experience the world visually. It's the art of making functionality beautiful and ensuring that every detail tells a story.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Support</p>
-      <p>Support is like having a dependable ally in your corner. It's not just about fixing problems; it's about creating a connection, offering solutions, and making things easy. Whether it's technical snags or a helping hand, support is that reliable friend you can count on for a smoother journey.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px" id="projects">
-  <h3 class="w3-center">PROJECTS</h3>
-  <p class="w3-center w3-large"></p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <a href="https://mattweatherapp.eu/" target="_blank">
-          <img src="weatherapp.png" alt="" style="width:100%">
-      </a>
-        <div class="w3-container">
-          <h3>Weather Web App</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
+<!--
+    <section class="services" id="services">
+        <h2 class="allheading">My <span>Services</span></h2>
+        <div class="project-section">
+        <div class="project-box">
+            <i class='bx bxl-html5' ></i>
+            <h3>Web Development</h3>
+            <p></p>
         </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <a href="https://isximatti.github.io/Workout-Tracker/" target="_blank">
-          <img src="workout.png" alt="" style="width:100%;">
-        </a>
-        <div class="w3-container">
-          <h3>Workout Tracker</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
+        <div class="project-box">
+            <i class='bx bx-code-alt' ></i>
+            <h3>App Development</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, nam.</p>
         </div>
-      </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <a href="https://isximatti.github.io/SmartWatchShopTemplate/" target="_blank">
-        <img src="one.png" alt="" style="width:100%">
-        </a>
-        <div class="w3-container">
-          <h3>Smartwatch Shop Template</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <a href="https://isximatti.github.io/GymWebsiteTemplate/" target="_blank">
-        <img src="gym.png" alt="" style="width:100%">
-      </a>
-        <div class="w3-container">
-          <h3>Gym Website Template</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Team Section 2 -->
-<div class="w3-container" style="padding:64px 8px" id="team2">
-  <p class="w3-center w3-large"></p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:0px">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <a href="https://isximatti.github.io/AppLandingPageTemplate/" target="_blank">
-          <img src="applandinggif.gif" alt="" style="width:100%">
-      </a>
-        <div class="w3-container">
-          <h3>App Landing Template</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <a href="">
-          <img src="" alt="" style="width:100%;">
-        </a>
-        <div class="w3-container">
-          <h3>Project 6</h3>
-          <p class="w3-opacity"></p>
-          <p>In Progress.</p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <a href="">
-        <img src="" alt="" style="width:100%">
-        </a>
-        <div class="w3-container">
-          <h3>Project 7</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <a href="">
-        <img src="" alt="" style="width:100%">
-      </a>
-        <div class="w3-container">
-          <h3>Project 8</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Promo Section "Statistics" -->
-<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">0</span>
-    <br>Partners
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">5</span>
-    <br>Projects Done
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">1</span>
-    <br>Projects In Progress
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">0</span>
-    <br>Happy Clients
-  </div>
-</div>
+    </section>
+-->
 
 
-<!-- Skills Section -->
-<div class="w3-container w3-light-grey w3-padding-64">
-    <div class="w3-container" style="padding:128px 16px" id="skills"></div>
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>SKILLS.</h3>
-      <p>I've built a solid foundation of knowledge in my field, but what truly sets me apart is my unyielding commitment <br> to continuous learning. While I bring a certain level of expertise, I'm always seeking opportunities to enhance my <br> skills and delve into new realms of knowledge. The dynamic nature of the field excites me, and my enthusiasm to <br> stay ahead of the curve is a driving force in my professional journey. I approach every task with a growth mindset, <br> eager to absorb new information and embrace challenges as valuable learning experiences.</p>
-      <p></p>
-    </div>
-    <div class="w3-col m6">
-      <p class="w3-wide"><i class="fa fa-html5 w3-margin-right"></i>HTML</p>
-      <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:90%">80%</div>
-      </div>
-      <p class="w3-wide"><i class="fa fa-css3 w3-margin-right"></i>CSS</p>
-      <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:85%">65%</div>
-      </div>
-      <p class="w3-wide"><i class="fa fa-codiepie w3-margin-right"></i>C++</p>
-      <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:75%">40%</div>
-      </div>
-      <p class="w3-wide"><i class="fa fa-code w3-margin-right"></i>JavaScript</p>
-      <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:75%">30%</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">Lets get in touch. Send me a message:</p>
-  <div style="margin-top:48px">
-    <br>
+
+
+    <section class="projects" id="projects">
+    <h2 class="allheading">Recent <span>Projects</span></h2>
+    <div class="skills-section">
+        <div class="skills-box">
+            <img src="weatherapp.png" alt="">
+            <div class="skills-head">
+                <h4>Weather Web App</h4>
+                <p></p>
+                <a href="https://mattweatherapp.eu/"><i class='bx bx-link-external'></i></i></a>
+            </div>
+        </div>
+        <div class="skills-box">
+            <img src="workout.png" alt="">
+            <div class="skills-head">
+                <h4>Workout Tracker</h4>
+                <p></p>
+                <a href="https://isximatti.github.io/Workout-Tracker/"><i class='bx bx-link-external'></i></i></a>
+            </div>
+        </div>
+        <div class="skills-box">
+            <img src="one.png" alt="">
+            <div class="skills-head">
+                <h4>Smartwatch Shop Template</h4>
+                <p></p>
+                <a href="https://isximatti.github.io/SmartWatchShopTemplate/"><i class='bx bx-link-external'></i></i></a>
+            </div>
+        </div>
+        <div class="skills-box">
+            <img src="gym.png" alt="">
+            <div class="skills-head">
+                <h4>Gym Website Template</h4>
+                <p></p>
+                <a href="https://isximatti.github.io/GymWebsiteTemplate/"><i class='bx bx-link-external'></i></i></a>
+            </div>
+        </div>
+        <div class="skills-box">
+            <img src="applandinggif.gif" alt="">
+            <div class="skills-head">
+                <h4>App Landing Page Template</h4>
+                <p></p>
+                <a href="https://isximatti.github.io/AppLandingPageTemplate/"><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+        <!--
+        <div class="skills-box">
+            <img src="" alt="">
+            <div class="skills-head">
+                <h4></h4>
+                <p></p>
+                <a href="#"><i class='bx bx-link' ></i></a>
+            </div>
+        </div>
+          -->
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="news" id="news">
+    <h2 class="allheading">Latest <span>News</span></h2>
+    <div class="news-container">
+        <div class="news-box">
+            <p class="news-date">Published on: 16 Dec 2023</p>
+            <h3>Exciting News: My Website's Brand New Look!</h3>
+            <p>I'm thrilled to share some exciting news with you all! My website just got a fresh, new look! I've revamped the design to make it sleeker and more user-friendly.</p>
+        </div>
+
+        <div class="news-box">
+            <p class="news-date">Published on: 10 Dec 2023</p>
+            <h3>New App Landing Page Template</h3>
+            <p>I'm excited to introduce my new app landing page template website. What's remarkable is that I didn't think I could finish it in just one day, but I did!</p>
+        </div>
+
+        <div class="news-box">
+            <p class="news-date">Published on: 9 Dec 2023</p>
+            <h3>Update to Weather Web App Project</h3>
+            <p>I'm excited to announce an update to the Weather Web App project!
+                This latest version now features beautifully designed icons, enhancing both the aesthetic appeal and the user experience of the app.</p>
+        </div>
+        <!-- Add more news boxes as needed -->
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="contact" id="contact">
+    <h2 class="allheading">Contact <span>Me</span></h2>
     <form action="https://formsubmit.co/matej.gy@gmail.com" method="POST" >
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-black" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
+        <div class="input-box">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="Subject">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+            <input type="submit" class="btn" value="Send Message">
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Matej Gyergyek. All Rights Reserved.</p>
+        </div>
     </form>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <a href="https://www.instagram.com/matejgyergyek/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-    <a href="https://www.linkedin.com/in/matej-gyergyek-283087165/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  </div>
-  <p>&copy; 2023 Matej Gyergyek. All rights reserved.</p><p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+</section>
 
 
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
-
-<script>
-// Show the popup when the page loads
-window.onload = function() {
-    document.getElementById('countdownPopup').style.display = 'block';
-
-    // Set the date for the countdown
-    var countDownDate = new Date("Dec 16, 2023 23:0:00").getTime();
-
-    // Update the countdown every second
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-
-        // Time calculations
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result
-        document.getElementById("countdownTimer").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
-
-        // When the countdown is over
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("countdownTimer").innerHTML = "EXPIRED";
-        }
-    }, 1000);
-}
-
-// Function to close the popup
-function closePopup() {
-    document.getElementById('countdownPopup').style.display = 'none';
-}
-</script>
 
 
+
+
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script src="script.js"></script>
 </body>
 </html>

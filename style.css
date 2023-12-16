@@ -513,3 +513,64 @@ form .btn {
         transform: translateY(0);
     }
 }
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .skills-section {
+        grid-template-columns: 1fr; /* One column layout for smaller screens */
+        gap: 1rem;
+    }
+
+    .skills-box img {
+        width: auto; /* Adjust image width for smaller screens */
+        max-width: 100%;
+        height: auto;
+    }
+
+    .skills-head {
+        padding: 0 2rem; /* Reduce padding for smaller screens */
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .skills-box .skills-head h4 {
+        font-size: 2rem; /* Smaller heading font size */
+    }
+
+    .skills-head p {
+        font-size: 1.2rem; /* Smaller paragraph font size */
+    }
+
+    .skills-head a {
+        width: 4rem; /* Smaller link size */
+        height: 4rem;
+    }
+
+    .skills-head i {
+        font-size: 1.5rem; /* Smaller icon size */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Further adjustments for very small screens, like mobile phones */
+    .skills-head {
+        padding: 0 1rem;
+        font-size: 1.2rem;
+    }
+
+    .skills-box .skills-head h4 {
+        font-size: 1.6rem;
+    }
+
+    .skills-head p {
+        font-size: 1rem;
+    }
+
+    .skills-head a {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .skills-head i {
+        font-size: 1.2rem;
+    }
+}
