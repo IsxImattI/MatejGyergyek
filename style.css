@@ -1,0 +1,59 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(-45deg, #000000, #434343, #0e76a8, #000000, #434343, #0e76a8);
+  background-size: 300% 300%;
+  animation: gradientBackground 10s ease infinite;
+}
+
+.content {
+  text-align: center;
+  transform: translateY(-100px); /* Raise the content above the center */
+  padding: 20px;
+  max-width: 600px; /* Set a max-width for the content */
+  background: rgba(255, 255, 255, 0.85); /* Light background for readability */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Subtle shadow for depth */
+}
+
+.icon-rotate {
+  animation: rotate 2s linear infinite;
+  height: 100px; /* Adjust the size of your icon if needed */
+  width: 100px; /* Adjust the size of your icon if needed */
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 1rem; /* Adjust the font size if needed */
+  line-height: 1.6; /* Space between lines for readability */
+  color: #333; /* Dark color for the text */
+  margin-bottom: 2rem; /* Space below the message */
+  padding: 0 20px; /* Padding on the sides for narrower screens */
+}
