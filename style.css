@@ -57,3 +57,10 @@ body, html {
   margin-bottom: 2rem; /* Space below the message */
   padding: 0 20px; /* Padding on the sides for narrower screens */
 }
+
+.copyright {
+  text-align: center; 
+  margin-top: 10px; 
+  font-size: 16px; 
+  color: white; 
+}
