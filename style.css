@@ -1,66 +1,638 @@
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+:root{
+    --blue: blue;
 }
 
-@keyframes gradientBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
 }
 
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(-45deg, #000000, #434343, #0e76a8, #000000, #434343, #0e76a8);
-  background-size: 300% 300%;
-  animation: gradientBackground 10s ease infinite;
+*::selection{
+    background:var(--blue);
+    color:#333;
 }
 
-.content {
-  text-align: center;
-  transform: translateY(-100px); /* Raise the content above the center */
-  padding: 20px;
-  max-width: 600px; /* Set a max-width for the content */
-  background: rgba(255, 255, 255, 0.85); /* Light background for readability */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Subtle shadow for depth */
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
 }
 
-.icon-rotate {
-  animation: rotate 2s linear infinite;
-  height: 100px; /* Adjust the size of your icon if needed */
-  width: 100px; /* Adjust the size of your icon if needed */
-  margin-bottom: 20px;
+html::-webkit-scrollbar{
+    width:1.4rem;
 }
 
-.message {
-  font-size: 1rem; /* Adjust the font size if needed */
-  line-height: 1.6; /* Space between lines for readability */
-  color: #333; /* Dark color for the text */
-  margin-bottom: 2rem; /* Space below the message */
-  padding: 0 20px; /* Padding on the sides for narrower screens */
+html::-webkit-scrollbar-track{
+    background:#222;
 }
 
-.copyright {
-  text-align: center; 
-  margin-top: 10px; 
-  font-size: 16px; 
-  color: white; 
+html::-webkit-scrollbar-thumb{
+    background:var(--blue);
 }
+
+body{
+    background:#111;
+    overflow-x: hidden;
+    padding-left: 35rem;
+}
+
+section{
+    min-height: 100vh;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.btn{
+    padding:1rem 3rem;
+    background:#333;
+    color:#fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+.btn i{
+    padding:0 .5rem;
+    font-size: 1.8rem;
+}
+
+.btn:hover{
+    background:var(--blue);
+    color: #111;
+}
+
+
+.heading{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: .1rem solid #fff4;
+    color:#fff;
+}
+
+.heading span{
+    color:var(--blue);
+}
+
+header{
+    position: fixed;
+    top:0; left:0;
+    z-index: 1000;
+    height:100%;
+    width:35rem;
+    background:#1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    transition: .2s linear;
+}
+
+header .user img{
+    height:17rem;
+    width:17rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border:.7rem solid var(--blue);
+}
+
+header .user .name{
+    font-size: 3.5rem;
+    color:#fff;
+}
+
+header .user .post{
+    font-size: 1.8rem;
+    color:#aaa;
+}
+
+header .navbar{
+    width:100%;
+}
+
+header .navbar ul{
+    list-style: none;
+    padding:1rem 3rem;
+}
+
+
+header .navbar ul li a{
+    display: block;
+    padding:1rem;
+    margin:1.5rem 0;
+    background:#333;
+    color:#fff;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+header .navbar ul li a:hover{
+    background:var(--blue);
+    color: #111;
+}
+
+#menu{
+    position: fixed;
+    top:2rem; right:2rem;
+    background:#333;
+    color:#fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding:1rem 1.5rem;
+    z-index: 1000;
+    display: none;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding:0 15rem;
+}
+
+.home h3{
+    font-size: 2.5rem;
+    color:#fff;
+}
+
+.home h1{
+    font-size:5rem;
+    color:#fff;
+}
+
+.home h1 span{
+    color:var(--blue);
+}
+
+.home p{
+    font-size:2rem;
+    color:#aaa;
+    line-height: 1.5;
+    padding: 1rem 0;
+}
+
+.home .social-icons {
+    display: flex;
+    justify-content: start;
+    padding: 1rem 0;
+    margin-right: 1rem;
+    font-size: 36px;
+}
+
+.home .social-icons a {
+    margin-right: 2rem;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:1rem 0;
+}
+
+.about .row .info{
+    flex:1 1 48rem;
+    padding:2rem 1rem;
+    padding-left: 6rem;
+}
+
+.about .row .info h3{
+    font-size: 2rem;
+    color:var(--blue);
+    padding:1rem 0;
+    font-weight: normal;
+}
+
+.about .row .info h3 span{
+    color:#eee;
+    padding:0 .5rem;
+}
+
+.about .row .counter{
+    flex:1 1 48rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about .row .counter .box{
+    width:20rem;
+    background:#222;
+    text-align: center;
+    padding: 2rem;
+    margin:2rem;
+}
+
+.about .row .counter .box span{
+    font-size: 4rem;
+    color:var(--blue);
+}
+
+.about .row .counter .box h3{
+    font-size: 2rem;
+    color:#fff;
+}
+
+.education .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem; /* Adjust the padding as needed */
+}
+
+.education .box-container .box {
+    width: calc(27rem - 4rem); /* Adjust the width and margin as needed */
+    margin: 2rem; /* Adjust the margin as needed */
+    padding-left: 4rem;
+    border-left: 0.2rem solid #fff;
+    position: relative;
+}
+
+.education .box-container .box span {
+    font-size: 1.5rem;
+    background: #222;
+    color: #fff;
+    border-radius: 5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.education .box-container .box h3 {
+    font-size: 2rem;
+    color: white;
+    padding: 0.5rem 0;
+    margin-top: 1.5rem;
+}
+
+.education .box-container .box p {
+    font-size: 1.4rem;
+    color: #eee;
+    line-height: 1.5;
+}
+
+.education .box-container .box i {
+    position: absolute;
+    top: -1.5rem;
+    left: -2.5rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #111;
+    background: var(--blue);
+}
+
+
+.skills .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 3rem; /* Adjust the padding as needed */
+}
+
+.skills .box-container .box {
+    width: 27rem;
+    margin: 1rem; /* Adjust the margin as needed */
+    padding-left: 4rem;
+    border-left: .2rem solid #fff;
+    position: relative;
+}
+
+.skills .box-container .box svg {
+    width: 5rem; /* Set the width of the SVG to your desired size */
+    height: 5rem; /* Set the height of the SVG to your desired size */
+    margin-right: 1rem; /* Add some margin to separate it from other elements */
+    fill: #74C0FC; /* Set the fill color of the SVG */
+}
+
+.skills .box-container .box img {
+    width: 5rem; /* Set the width of the image to your desired size */
+    height: 5rem; /* Set the height of the image to your desired size */
+    margin-right: 1rem; /* Add some margin to separate it from other elements */
+    object-fit: contain; /* Maintain the aspect ratio of the image */
+    background-color: #74C0FC; /* Set the background color for the image container */
+    border-radius: 50%; /* Apply border-radius to create a circular shape */
+    padding: 0.5rem; /* Add padding to the image container */
+}
+
+
+.skills .box-container .box span {
+    font-size: 1.5rem;
+    background: #222;
+    color: #fff;
+    border-radius: 5rem;
+    padding: .5rem 1.5rem;
+}
+
+.skills .box-container .box h3 {
+    font-size: 2rem;
+    color: white;
+    padding: .5rem 0;
+    margin-top: 1.5rem;
+}
+
+.skills .box-container .box p {
+    font-size: 1.4rem;
+    color: #eee;
+    line-height: 1.5;
+}
+
+.skills .box-container .box i {
+    position: absolute;
+    top: -1.5rem;
+    left: -2.5rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #111;
+    background: var(--blue);
+}
+
+.portfolio .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.portfolio .box-container .box{
+    height: 20rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio .box-container .box img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.portfolio .box-container .box:hover img{
+    transform: scale(1.2);
+}
+
+.coming-soon {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+}
+
+
+.contact .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact .row .content{
+    flex:1 1 30rem;
+    padding:4rem;
+    padding-bottom: 0;
+}
+
+.contact .row form{
+    flex:1 1 45rem;
+    padding:2rem;
+    margin:2rem;
+    margin-bottom: 4rem;
+}
+
+.contact .row form .box{
+    padding:1.5rem;
+    margin:1rem 0;
+    background:#3333;
+    color:#fff;
+    text-transform: none;
+    font-size: 1.7rem;
+    width:100%;
+}
+
+.contact .row form .box::placeholder{
+    text-transform: capitalize;
+}
+
+.contact .row form .message{
+    height: 15rem;
+    resize: none;
+}
+
+.contact .row .content .title{
+    text-transform: uppercase;
+    color:#fff;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.contact .row .content .info h3{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color:#eee;
+    padding:1rem 0;
+    font-weight: normal;
+}
+
+.contact .row .content .info h3 i{
+    padding-right: 1rem;
+    color:var(--blue);
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #222; /* Dark background for the form */
+    color: #fff; /* Light text color for readability */
+    border-radius: 8px; /* Optional: adds rounded corners to the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: adds a subtle shadow */
+    margin: 2rem auto; /* Center form on the page */
+    width: auto; /* Adjust based on your layout needs */
+    max-width: 600px; /* Maximum width of the form */
+}
+
+form label {
+    margin-bottom: 1rem;
+    color: #fff; /* Ensuring label is visible against the dark background */
+    font-size: 1.7rem;
+}
+
+form input[type="email"], form textarea {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background: #333; /* Slightly lighter background for input fields */
+    color: #fff; /* Text color */
+    border-radius: 4px; /* Matching the theme's rounded aesthetic */
+    width: 100%; /* Ensuring input fields fill the form width */
+    font-size: 1.7rem;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: #aaa; /* Lighter text color for placeholders for contrast */
+}
+
+form textarea {
+    height: 15rem; /* Specific height for textarea */
+    resize: vertical; /* Allowing vertical resizing only */
+}
+
+form button {
+    padding: 1rem 2rem;
+    background: var(--blue); /* Using the accent color */
+    color: #111; /* Dark text color for contrast */
+    font-size: 1.7rem;
+    margin-top: 1rem; /* Space above the button */
+    border-radius: 4px; /* Consistent rounded corners */
+    cursor: pointer; /* Visual cue for clickable elements */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+form button:hover {
+    background: #0056b3; /* Darker shade of blue on hover for visual feedback */
+}
+
+/* Ensuring consistency with your global styles */
+* {
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+*::selection {
+    background: var(--blue);
+    color: #333;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #222; /* Matches the dark theme; adjust if using a light theme or based on theme switching */
+    color: #fff; /* Light text for contrast against the dark background */
+    font-size: 1.6rem; /* Adjust the font size as needed */
+}
+
+
+
+/* Adjust the footer for different screen sizes if necessary */
+@media (max-width:768px) {
+    .footer p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 692px) and (min-width: 478px) {
+    /* Custom styles for the cybersecurity image to ensure full visibility */
+    .education .box-container .box img {
+        max-width: 100%; /* Makes the image responsive */
+        height: auto; /* Maintains the aspect ratio */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:1200px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .home{
+        padding:1rem 4rem;
+    }
+
+}
+
+@media (max-width:991px){
+
+   header{
+       left:-120%;
+   }
+
+   #menu{
+       display: block;
+   }
+
+   header.toggle{
+    left:0%;
+   }
+
+   body{
+       padding:0;
+   }
+
+}
+
+@media (max-width:768px){
+
+    html{
+        font-size: 50%;
+    }
+ 
+ }
+
+@media (max-width:400px){
+
+    header{
+        width: 100vw;
+    }
+
+    .heading{
+        margin:0 3rem;
+    }
+
+    .about .row .counter .box{
+        width: 100%;
+    }
+ 
+    .education .box-container .box{
+        width:100%;
+    }
+
+    .portfolio .box-container .box{
+        width:100%;
+    }
+
+    .contact .row form{
+        margin:3rem 0;
+    }
+
+ }
