@@ -36,3 +36,24 @@ $(document).ready(function(){
     });
   
   });
+
+
+
+    var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 1, // Ensure only one slide is visible at a time
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        spaceBetween: 0 // Ensure there's no space between slides
+    });
+
+
