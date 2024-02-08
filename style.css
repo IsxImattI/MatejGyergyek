@@ -370,6 +370,7 @@ header .navbar ul li a:hover{
     height: 600px;
     margin: auto;
     overflow: hidden; /* Ensure nothing overflows from each slide */
+    margin-bottom: 40px;
 }
 
 .portfolio .swiper-slide {
